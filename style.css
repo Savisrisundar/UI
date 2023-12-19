@@ -138,6 +138,26 @@
     border: 5px solid grey; 
     border-radius: 40px;
 }
+.small-box1{
+    width: 35%;
+    height: 8%;
+    margin-top: 10%;
+   
+   
+   
+    margin-left: 30%;
+    background-color: white;
+    border: 5px solid grey; 
+    border-radius: 40px;
+}
+.small-box1 p{
+    text-align: center;
+    font-size: 22px;
+    padding: 5px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
 .small-box p{
     text-align: center;
     font-size: 22px;
