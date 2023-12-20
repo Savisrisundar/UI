@@ -239,4 +239,17 @@
     color: red;
 }
 
+.small-rect table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    
+}
+.small-rect th, .small-rect td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+
 
