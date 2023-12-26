@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Data to Flask Example</title>
+</head>
+<body>
+
+    <h1>Welcome to My Flask App</h1>
+
+    <!-- Add input fields and an anchor tag with an onclick event -->
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="number" id="age" placeholder="Age" required>
+    <a href="#" onclick="sendData()">Send Data</a>
+
+    <script>
+        function sendData() {
+            // Get input values
+            var name = document.getElementById('name').value;
+            var age = document.getElementById('age').value;
+
+            // Construct the URL with query parameters
+            var url = '/process_data?name=' + encodeURIComponent(name) + '&age=' + encodeURIComponent(age);
+
+            // Navigate to the URL
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+</html>
