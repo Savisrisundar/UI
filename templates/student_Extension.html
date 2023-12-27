@@ -87,12 +87,18 @@
                     <h1 style="margin-top:10%">WRONG INPUT</h1>
                     <button type="button" onclick="closepopup()" onmouseover="this.style.backgroundColor='#006400'" onmouseout="this.style.backgroundColor='#6fd649'">OK</button>
                 </div>
+
+                <div class="popup" id="popups">
+                    <img src={{ url_for('static', filename='tick.png') }}>
+                    <h1 style="margin-top:10%; color:green">REQUEST ACCEPTED</h1>
+                    <button type="button" onclick="closepopup()" onmouseover="this.style.backgroundColor='#006400'" onmouseout="this.style.backgroundColor='#6fd649'">OK</button>
+                </div>
             
             </div>
             
         </div>
         <script>
-            let popup=document.getElementById("popup");
+            let popups=document.getElementById("popups");
             function sendData() {
                 // Get input values
               
@@ -109,12 +115,12 @@
                 window.location.href = url;
             }
             function openpopup(){
-                popup.classList.add("open-popup");
+                popups.classList.add("open-popup");
                 var pop=document.getElementById('pop');
                 pop.classList.add('blur-effect');
             }
             function closepopup(){
-                popup.classList.remove("open-popup");
+                popups.classList.remove("open-popup");
                 pop.classList.remove('blur-effect');
             }
         </script>
