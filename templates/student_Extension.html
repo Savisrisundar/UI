@@ -40,65 +40,83 @@
             <div class="rectangle">
                 <p>EXTENSION REQUEST</p>
                
-                <div class="small-rect" style="height:80%;margin-top: 0%;;border-radius: 50px 0px 0px 50px; background-color:#D4EDFBA8;margin-left:3%"> 
+                <div class="small-rect" style="height:80%;margin-top: 0%;;border-radius: 50px 0px 0px 50px; background-color:#D4EDFBA8;margin-left:3%" id="pop"> 
                     
                     
                     
-                    <p style="font-size: 18px;color:black;margin-top:3%; margin-right:42%;white-space: nowrap;">BOOK NAME</p>
-                    <div class="user-box" style="width: 40%; margin-left:40%; margin-top:-6%; border-radius:15px">
+                    <p style="font-size: 18px;color:black;margin-top:5%; margin-right:42%;white-space: nowrap;">BOOK NAME</p>
+                    <div class="user-box" style="width: 40%; margin-left:40%; margin-top:-4%; border-radius:15px">
                         <input type="text" id = "bookname" placeholder="Enter your Book Name" required>
                     </div>
                     <p style="font-size: 18px;color:black;margin-top:3%; margin-right:42%;white-space: nowrap;">AUTHOR NAME</p>
-                    <div class="user-box" style="width: 40%; margin-left:40%; margin-top:-6%; border-radius:15px" >
+                    <div class="user-box" style="width: 40%; margin-left:40%; margin-top:-4%; border-radius:15px;" >
                         <input type="text" id = "authorname" placeholder="Enter Author Name" required>
                     </div>
                     <p style="font-size: 18px;color:black;margin-top:3%; margin-right:38%;white-space: nowrap;">REASON</p>
-                    <div class="user-box" style="width: 40%; margin-left:40%; margin-top:-6%; border-radius:15px">
+                    <div class="user-box" style="width: 40%; margin-left:40%; margin-top:-4%; border-radius:15px">
                         <input type="text" id = "reason" placeholder="Enter your reason" required>
                     </div>
                     <p style="font-size: 18px;color:black;margin-top:3%;margin-left:9%;white-space: nowrap;">EXPECTED CHECK OUT DATE</p>
                     <p style="font-size: 14px;color:black;margin-top:0%;margin-left:9%;white-space: nowrap;">(dd-MM-YYYY)   /   (01-01-2024)</p>
  
                     <div class="user-box" style="width: 40%; margin-left:35%; margin-top:1%; border-radius:15px">
-                        <input type="text" id = "date" placeholder="Enter your date" required>
+                        <input type="date" id = "date" placeholder="Enter your date" required>
                     </div>
                     
                     <a href="{{ url_for('extensionStatus') }}" style="text-decoration: none;">
                         
-                            <button style="position: absolute; margin-top: -18.3%;left: 76.5%; background-color: #F2959596; border-radius: 0px 80px 80px 80px; width: 18.5%; height: 20%;">
-                                <p style="font-size: 25px; margin-left: 12%; color: black;">REQUEST STATUS</p>
+                            <button style="position: absolute; margin-top: -20.6%;left: 82.8%; background-color: #F2959596; border-radius: 80px 80px 80px 80px; width: 12%; height: 15%; cursor:pointer" onmouseover="this.style.backgroundColor='#FF5733'" onmouseout="this.style.backgroundColor='#F2959596'">
+                                <p style="font-size: 25px; margin-left: 5%; color: black;margin-top:5%">REQUEST STATUS</p>
                             </button>
                         
                         </a>
-                    <a href="#" onclick="sendData()" style="text-decoration: none;">
-                    <button style="position: absolute;background-color: #F2959596;margin-top: -1.5%; left:76.5%;border-radius:80px 80px 80px 0px; width:18.5%;height: 20%;">
-                        <p style="font-size: 25px; margin-left:12%; padding:8%;margin-bottom:20% ; color:black; ">REQUEST</p>
-                    </button></a>
+                    
+                    <button style="position: absolute;background-color: #F2959596;margin-top: -1%; left:82.8%;border-radius:80px 80px 80px 80px; width:12%;height: 15%;cursor:pointer" onmouseover="this.style.backgroundColor='#FF5733'" onmouseout="this.style.backgroundColor='#F2959596'" onclick="openpopup()">
+                        <p style="font-size: 25px; margin-left:5%; padding:5%;margin-bottom:18% ; color:black; ">REQUEST</p>
+                    </button>
+                    
+                    
 
-                    <script>
-                        function sendData() {
-                            // Get input values
-                          
-                            var name = document.getElementById('bookname').value;
-                            var auth = document.getElementById('authorname').value;
-                            var res = document.getElementById('reason').value;
-                            var date = document.getElementById('date').value;
                    
-                
-                            // Construct the URL with query parameters
-                            var url = '/extensionRequest?name=' + encodeURIComponent(name)+ '&auth=' + encodeURIComponent(auth)+ '&res=' + encodeURIComponent(res)+ '&date=' + encodeURIComponent(date);
-                
-                            // Navigate to the URL
-                            window.location.href = url;
-                        }
-                    </script>
 
                     
                     
+                </div>
+                <div class="popup" id="popup">
+                    <img src={{ url_for('static', filename='cross.png') }}>
+                    <h1 style="margin-top:10%">WRONG INPUT</h1>
+                    <button type="button" onclick="closepopup()" onmouseover="this.style.backgroundColor='#006400'" onmouseout="this.style.backgroundColor='#6fd649'">OK</button>
                 </div>
             
             </div>
             
         </div>
+        <script>
+            let popup=document.getElementById("popup");
+            function sendData() {
+                // Get input values
+              
+                var name = document.getElementById('bookname').value;
+                var auth = document.getElementById('authorname').value;
+                var res = document.getElementById('reason').value;
+                var date = document.getElementById('date').value;
+       
+    
+                // Construct the URL with query parameters
+                var url = '/extensionRequest?name=' + encodeURIComponent(name)+ '&auth=' + encodeURIComponent(auth)+ '&res=' + encodeURIComponent(res)+ '&date=' + encodeURIComponent(date);
+    
+                // Navigate to the URL
+                window.location.href = url;
+            }
+            function openpopup(){
+                popup.classList.add("open-popup");
+                var pop=document.getElementById('pop');
+                pop.classList.add('blur-effect');
+            }
+            function closepopup(){
+                popup.classList.remove("open-popup");
+                pop.classList.remove('blur-effect');
+            }
+        </script>
     </body>
 </html>
