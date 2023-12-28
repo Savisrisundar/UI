@@ -43,36 +43,36 @@
                 <div class="small-rect" style="height:80%;margin-top: 0%;;border-radius: 50px 0px 0px 50px; background-color:#D4EDFBA8;margin-left:3%" id="pop"> 
                     
                     
-                    
-                    <p style="font-size: 18px;color:black;margin-top:5%; margin-right:42%;white-space: nowrap;">BOOK NAME</p>
-                    <div class="user-box" style="width: 40%; margin-left:40%; margin-top:-4%; border-radius:15px">
+                    <div class="ex_req">
+                    <p style="margin-top:5%; margin-right:42%;white-space: nowrap;">BOOK NAME</p>
+                    <div class="user-box_1" style="width: 40%; margin-left:40%;  border-radius:15px">
                         <input type="text" id = "bookname" placeholder="Enter your Book Name" required>
                     </div>
-                    <p style="font-size: 18px;color:black;margin-top:3%; margin-right:42%;white-space: nowrap;">AUTHOR NAME</p>
-                    <div class="user-box" style="width: 40%; margin-left:40%; margin-top:-4%; border-radius:15px;" >
+                    <p style="margin-top:3%; margin-right:42%;white-space: nowrap;">AUTHOR NAME</p>
+                    <div class="user-box_1" style="width: 40%; margin-left:40%; border-radius:15px;" >
                         <input type="text" id = "authorname" placeholder="Enter Author Name" required>
                     </div>
-                    <p style="font-size: 18px;color:black;margin-top:3%; margin-right:38%;white-space: nowrap;">REASON</p>
-                    <div class="user-box" style="width: 40%; margin-left:40%; margin-top:-4%; border-radius:15px">
+                    <p style="margin-top:3%; margin-right:38%;white-space: nowrap;">REASON</p>
+                    <div class="user-box_1" style="width: 40%; margin-left:40%; border-radius:15px">
                         <input type="text" id = "reason" placeholder="Enter your reason" required>
                     </div>
-                    <p style="font-size: 18px;color:black;margin-top:3%;margin-left:9%;white-space: nowrap;">EXPECTED CHECK OUT DATE</p>
+                    <p style="margin-top:3%;margin-left:9%;white-space: nowrap;">EXPECTED CHECK OUT DATE</p>
                     <p style="font-size: 14px;color:black;margin-top:0%;margin-left:9%;white-space: nowrap;">(dd-MM-YYYY)   /   (01-01-2024)</p>
  
                     <div class="user-box" style="width: 40%; margin-left:35%; margin-top:1%; border-radius:15px">
                         <input type="date" id = "date" placeholder="Enter your date" required>
-                    </div>
+                    </div></div>
                     
                     <a href="{{ url_for('extensionStatus') }}" style="text-decoration: none;">
                         
-                            <button style="position: absolute; margin-top: -340px;left: 82.8%; background-color: #F2959596; border-radius: 80px 80px 80px 80px; width: 12%; height: 15%; cursor:pointer" onmouseover="this.style.backgroundColor='#FF5733'" onmouseout="this.style.backgroundColor='#F2959596'">
-                                <p style="font-size: 25px; margin-left: 5%; color: black;margin-top:5%">REQUEST STATUS</p>
+                            <button class="req" style="position: absolute;left: 82.8%; background-color: #F2959596; border-radius: 80px 80px 80px 80px; width: 12%; height: 15%; cursor:pointer" onmouseover="this.style.backgroundColor='#FF5733'" onmouseout="this.style.backgroundColor='#F2959596'">
+                                <p style="margin-left: 5%;margin-top:5%">REQUEST STATUS</p>
                             </button>
                         
                         </a>
                     
-                    <button style="position: absolute;background-color: #F2959596;margin-top: -55px; left:82.8%;border-radius:80px 80px 80px 80px; width:12%;height: 15%;cursor:pointer" onmouseover="this.style.backgroundColor='#FF5733'" onmouseout="this.style.backgroundColor='#F2959596'" onclick="openpopup()">
-                        <p style="font-size: 25px; margin-left:5%; padding:5%;margin-bottom:18% ; color:black; ">REQUEST</p>
+                    <button class="req" style="position: absolute;background-color: #F2959596;margin-top: -55px; left:82.8%;border-radius:80px 80px 80px 80px; width:12%;height: 15%;cursor:pointer" onmouseover="this.style.backgroundColor='#FF5733'" onmouseout="this.style.backgroundColor='#F2959596'" onclick="openpopup()">
+                        <p style="margin-left:5%; padding:5%;margin-bottom:18% ; ">REQUEST</p>
                     </button>
                     
                     

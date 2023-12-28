@@ -120,6 +120,23 @@
     box-sizing: border-box;
     font-size: 16px;
 }
+.user-box_1{
+    width: 80%;
+    margin: 0 auto;
+    padding: top 0; 
+    margin-left: 5%;
+    border-radius: 10px;
+    margin-top:-4%;
+}
+.user-box_1 input{
+    width: 100%;
+    height: 40px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
 .forget-pass{
     text-align: right;
     display: block;
@@ -260,6 +277,9 @@
     border-radius: 80px 0px 0px 80px;
     
 }
+.mini-box p{
+    font-size: 20px; 
+}
 .popup{
     width: 400px;
     background: #fff;
@@ -289,6 +309,27 @@
     border-radius: 50%;
     box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
 }
+.req{
+    position: absolute; 
+    margin-top: -340px;
+    left: 82.8%; 
+    background-color: #F2959596; 
+    border-radius: 80px 80px 80px 80px; 
+    width: 12%; 
+    height: 15%; 
+    cursor:pointer
+}
+.req p{
+    font-size: 25px; 
+    margin-left: 5%; 
+    color: black;
+    
+
+}
+.ex_req p{
+    font-size: 18px;
+    color:black;
+}
 .popup button{
     width: 100%;
     margin-top: 50px;
@@ -301,11 +342,76 @@
     cursor: pointer;
     box-shadow: 0px 7px 5px rgba(0,0,0,0.2);
 }
+.user-box_2{
+    margin-left:35%; 
+    margin-top:-4%;
+}
+.user-box_2 input{
+    width: 100%;
+    height: 40px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
 
-@media (max-width: 950px) {
+@media (max-width: 400px) {
     .small-box p {
       font-size: 14px;
       font-weight: bold;
+    }
+    .req p{
+        font-size: 9px;
+
+    }
+  }
+
+
+
+@media (max-width: 950px) and (min-width:401px) {
+    .small-box p {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .req{
+        margin-top: -280px;
+    }
+    .req p{
+        font-size: 14px;
+
+    }
+    .ex_req p{
+        font-size: 13px;
+       
+    }
+    .user-box_1{
+        margin-top: -6%;
+    }
+    .mini-box p{
+        font-size: 14px; 
+    }
+    .user-box_2{
+        margin-left:39%; 
+        margin-top:-6%;
+    }
+  }
+
+
+  
+
+@media (max-width: 1550px ) and (min-width:951px) {
+    .small-box p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .req p{
+        font-size: 17px;
+
+    }
+    .ex_req p{
+        font-size: 16px;
+       
     }
   }
   
