@@ -24,7 +24,7 @@
 .cy{
     width: 100%;
     height: 100%;
-    
+    margin-top:0%;
     background-color: #ACC6BD21;
     border-radius: 0 0 400px 400px;
     transform: rotate(90deg);
@@ -49,14 +49,12 @@
 }
 
 .TI {
-    color: black;
-    text-align:left;
-    right: 20%;
-    top: 0%;
-    font-size: 35px;
-    padding-top: 20%;
-    transform: rotate(-90deg); /* Apply skew transformation */
-    margin-left: -30%;
+    transform:rotate(-360deg);
+    font-size:190%;
+    margin-left:15%;
+    margin-top:-50%;
+    width:70%;
+   /* background-color: purple;*/
 }
 
 .logo {
