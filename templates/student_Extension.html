@@ -82,13 +82,13 @@
                     
                     
                 </div>
-                <div class="popup" id="wrong">
+                <div class="popup" id="{% if request_accepted%}wrong{%else%}accept">
                     <img src={{ url_for('static', filename='cross.png') }}>
                     <h1 style="margin-top:10%">WRONG INPUT</h1>
                     <button type="button" onclick="closepopup()" onmouseover="this.style.backgroundColor='#006400'" onmouseout="this.style.backgroundColor='#6fd649'">OK</button>
                 </div>
 
-                <div class="popup" id="accept">
+                <div class="popup" id="{%if request_accepted%}accept{%else%}wrong">
                     <img src={{ url_for('static', filename='tick.png') }}>
                     <h1 style="margin-top:10%; color:green">REQUEST ACCEPTED</h1>
                     <button type="button" onclick="closepopup()" onmouseover="this.style.backgroundColor='#006400'" onmouseout="this.style.backgroundColor='#6fd649'">OK</button>
