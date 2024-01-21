@@ -1,0 +1,57 @@
+<!DOCTYPE  html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> VIT CHENNAI </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        
+        <div class="main">
+            <div class="left">
+                <div class="cy">
+                    
+                </div>
+                <div class="TI">LIBRARY MANAGEMENT 
+                    SYSTEM</div>
+            </div>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='vit.png') }}">
+                
+            </div>
+            <form action="/student" method="post">
+                <div class="box">
+                    <div class="login-text">STUDENT LOGIN</div>
+
+                    <div class="cred">USERNAME</div>
+                    <div class="user-box">
+                        <input type="text" name = "ID" placeholder="Enter your username" required>
+                    </div>
+
+                    <div class="cred">PASSWORD</div>
+                    <div class="user-box">
+                        <input type="password" name = "pass" placeholder="Enter your password" required>
+                    </div>
+                    <div>
+                        <a href="{{url_for('forget_pass')}}" class="forget-pass" >Forgot Password?</a>
+                    </div>
+                    
+                    <button class="small-box" style="background-color:grey;filter:brightness(120%)" onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='grey'">
+                    <p> LOGIN</p>
+                    </button>
+                    <div>
+                        <a href="{{ url_for('admin') }}" class="small" >ADMIN LOGIN</a>
+                    </div>
+                </div>
+            </form>
+            
+            
+
+        </div>
+        
+        
+    </body>
+</html>

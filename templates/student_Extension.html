@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> VIT CHENNAI </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="main">
+            <div class="p2_left">
+                
+                
+                
+                <a href="{{ url_for('holdings') }}">
+                    <button class="p2_btns" style="border-radius: 80px 80px 80px 80px;background-color: #E8CACA4F;filter: brightness(80%);"onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        MY HOLDINGS</button></a>
+                    <a href="{{ url_for('availability') }}">
+                    <button class="p2_btns" style="border-top: 0px;border-radius: 80px 80px 80px 80px;background-color: #E8CACA4F;filter: brightness(80%);"onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        AVAILABILITY CHECK</button></a>
+                    
+                    <a href="{{ url_for('penalty') }}">
+                    <button class="p2_btns" style="border-top: 0px; border-radius: 80px 80px 80px 80px;background-color: #E8CACA4F;filter: brightness(80%);"onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        PENALTY CHECK</button></a>
+                    
+                    <a href="{{ url_for('extension') }}">
+                    <button class="p2_btns" style="border-top: 0px;border-radius: 80px 80px 80px 80px;background-color: #E8CACA4F;filter: brightness(80%);"onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        EXTENSION REQUEST</button></a>
+
+                    <a href="{{ url_for('index') }}">
+                    <button class="small-box" style="border-radius: 80px 80px 80px 80px;margin-top: 140%;width:45%;background-color: #E8CACA4F;cursor: pointer;" onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        <p style="margin-top: 3%"> LOGOUT</p>
+                    </button></a>
+                
+                
+            </div>
+            <div class="p2_logo">
+                <img src="{{ url_for('static', filename='vit.png') }}">
+            </div>
+            <div class="rectangle">
+                <p>EXTENSION REQUEST</p>
+               
+                <div class="small-rect" style="height:80%;margin-top: 0%;;border-radius: 50px 0px 0px 50px; background-color:#D4EDFBA8;margin-left:3%" id="pop"> 
+                    
+                    
+                    <div class="ex_req">
+                    <p style="margin-top:5%; margin-right:42%;white-space: nowrap;">BOOK NAME</p>
+                    <div class="user-box_1" style="width: 40%; margin-left:40%;  border-radius:15px">
+                        <input type="text" id = "bookname" placeholder="Enter your Book Name" required>
+                    </div>
+                    <p style="margin-top:3%; margin-right:42%;white-space: nowrap;">AUTHOR NAME</p>
+                    <div class="user-box_1" style="width: 40%; margin-left:40%; border-radius:15px;" >
+                        <input type="text" id = "authorname" placeholder="Enter Author Name" required>
+                    </div>
+                    <p style="margin-top:3%; margin-right:38%;white-space: nowrap;">REASON</p>
+                    <div class="user-box_1" style="width: 40%; margin-left:40%; border-radius:15px">
+                        <input type="text" id = "reason" placeholder="Enter your reason" required>
+                    </div>
+                    <p style="margin-top:3%;margin-left:9%;white-space: nowrap;">EXPECTED CHECK OUT DATE</p>
+                    <p style="font-size: 14px;color:black;margin-top:0%;margin-left:9%;white-space: nowrap;">(dd-MM-YYYY)   /   (01-01-2024)</p>
+ 
+                    <div class="user-box" style="width: 40%; margin-left:35%; margin-top:1%; border-radius:15px">
+                        <input type="date" id = "date" placeholder="Enter your date" required>
+                    </div></div>
+                    
+                    <a href="{{ url_for('extensionStatus') }}" style="text-decoration: none;">
+                        
+                            <button class="req" style="position: absolute;left: 82.8%; background-color: #F2959596; border-radius: 80px 80px 80px 80px; width: 12%; height: 15%; cursor:pointer" onmouseover="this.style.backgroundColor='#FF5733'" onmouseout="this.style.backgroundColor='#F2959596'">
+                                <p style="margin-left: 5%;margin-top:5%">REQUEST STATUS</p>
+                            </button>
+                        
+                        </a>
+                    
+                    <button class="req" style="position: absolute;background-color: #F2959596;margin-top: -55px; left:82.8%;border-radius:80px 80px 80px 80px; width:12%;height: 15%;cursor:pointer" onmouseover="this.style.backgroundColor='#FF5733'" onmouseout="this.style.backgroundColor='#F2959596'" onclick="sendData()">
+                        <p style="margin-left:5%; padding:5%;margin-bottom:18% ; ">REQUEST</p>
+                    </button>
+                
+                    
+                    
+                </div>
+                
+                <div class="popup" id="{% if request_accepted%}wrong{%else%}accept{%endif%}">
+                    <img src="{{ url_for('static', filename='cross.png') }}">
+                    <h1 style="margin-top:10%">WRONG INPUT</h1>
+                    <button type="button" onclick="closepopup()" onmouseover="this.style.backgroundColor='#006400'" onmouseout="this.style.backgroundColor='#6fd649'">OK</button>
+                </div>
+
+                <div class="popup" id="{%if request_accepted%}accept{%else%}wrong{%endif%}">
+                    <img src="{{ url_for('static', filename='tick.png') }}">
+                    <h1 style="margin-top:10%; color:green">REQUEST ACCEPTED</h1>
+                    <button type="button" onclick="closepopup()" onmouseover="this.style.backgroundColor='#006400'" onmouseout="this.style.backgroundColor='#6fd649'">OK</button>
+                </div>
+            
+            </div>
+            
+        </div>
+        <script>
+            let popups=document.getElementById("accept");
+            window.onload = function() {
+                
+                var data = "{{request_accepted}}";
+                if(data==0 || data==1){
+                    openpopup();
+             
+                }
+           
+                
+            };
+            function sendData() {
+                // Get input values
+              
+                var name = document.getElementById('bookname').value;
+                var auth = document.getElementById('authorname').value;
+                var res = document.getElementById('reason').value;
+                var date = document.getElementById('date').value;
+       
+    
+                // Construct the URL with query parameters
+                var url = '/extensionRequest?name=' + encodeURIComponent(name)+ '&auth=' + encodeURIComponent(auth)+ '&res=' + encodeURIComponent(res)+ '&date=' + encodeURIComponent(date);
+    
+                // Navigate to the URL
+                window.location.href = url;
+            }
+            function openpopup(){
+                popups.classList.add("open-popup");
+                var pop=document.getElementById('pop');
+                pop.classList.add('blur-effect');
+            }
+            function closepopup(){
+                popups.classList.remove("open-popup");
+                pop.classList.remove('blur-effect');
+            }
+        </script>
+    </body>
+</html>

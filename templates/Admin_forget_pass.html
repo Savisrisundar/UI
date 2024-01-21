@@ -1,0 +1,55 @@
+<!DOCTYPE  html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> VIT CHENNAI </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        
+        <div class="main">
+            <div class="left_admin">
+                <div class="cy_admin">
+                    </div>
+                    <div class="TI">LIBRARY MANAGEMENT 
+                        SYSTEM</div>
+                </div>
+            
+            <div class="logo">
+                <img src="{{ url_for('static', filename='vit.png') }}">
+            </div>
+            <div class="box">
+                <div class="login-text">ADMIN LOGIN</div>
+            <form action="/send_otp" method="post">
+                <div class="cred">
+                    <p>EMP_ID</p>
+                </div>
+                <div class="user-box">
+                    <input name = "EMP_ID" type="text" placeholder="Enter your EMP_ID">
+                </div>
+                <div class="cred">MAIL_ID</div>
+                <div class="user-box">
+                    <input name ="mail-id" type="email" placeholder="Enter your MAIL_ID">
+                    
+                </div>
+                
+               
+                    <button class="small-box1" style="background-color:grey;filter:brightness(120%)" onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='grey'">
+                    <p> SEND OTP</p>
+                    </button>
+                <div>
+                </form>
+                    <a href="{{ url_for('index') }}" class="small" >STUDENT LOGIN</a>
+                </div>
+            </div>
+            
+            
+
+        </div>
+        
+        
+    </body>
+</html>

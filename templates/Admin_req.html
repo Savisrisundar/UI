@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> VIT CHENNAI </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="main">
+            <div class="p2_left">
+                
+                <a href="{{ url_for('request_admin') }}">
+                    <button class="p2_btns" style="border-radius: 80px 80px 80px 80px;background-color: #E8CACA4F;filter: brightness(80%);"onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        REQUESTS</button></a>
+                    <a href="{{ url_for('penalty_admin') }}">
+                    <button class="p2_btns" style="border-top: 0px;border-radius: 80px 80px 80px 80px;background-color: #E8CACA4F;filter: brightness(80%);"onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        PENALTIES</button></a>
+                    
+                    <a href="{{ url_for('student_data_check_admin') }}">
+                    <button class="p2_btns" style="border-top: 0px; border-radius: 80px 80px 80px 80px;background-color: #E8CACA4F;filter: brightness(80%);"onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        STUDENT DATA CHECK </button></a>
+                    
+                    <a href="{{ url_for('book_data_admin') }}">
+                    <button class="p2_btns" style="border-top: 0px;border-radius: 80px 80px 80px 80px;background-color: #E8CACA4F;filter: brightness(80%);"onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        BOOK DATA</button></a>
+
+                    <a href="{{ url_for('admin') }}">
+                    <button class="small-box" style="border-radius: 80px 80px 80px 80px;margin-top: 140%;width:45%;background-color: #E8CACA4F;cursor: pointer;" onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        <p style="margin-top: 3%"> LOGOUT</p>
+                    </button></a>
+            </div>
+            <div class="p2_logo">
+                <img src="{{ url_for('static', filename='vit.png') }}">
+            </div>
+            <div class="rectangle">
+                <p>REQUESTS</p>
+                <div class="small-rect" style="border-radius: 0px;width:90%; margin-left:5%;height:85%;margin-top:0%">
+                    <table>
+                      
+                        <thead>
+                            <tr>
+                                <th>S.NO</th>
+                                <th>REG NO</th>
+                                <th> BOOK NAME</th>
+                                <th>AUTHOR NAME </th>
+                                <th>REASON</th>
+                                <th>DAYS</th>
+                                <th>ACTION</th>
+                                
+                                
+                            </tr>
+            
+                        </thead>
+                        <tbody>
+                            {%for i in data%}
+                            <tr>
+                                <td>{{i[0]}}</td>
+                                <td>{{i[1]}}</td>
+                                <td>{{i[2]}}</td>
+                                <td>{{i[3]}}</td>
+                                <td>{{i[4]}}</td>
+                                <td>{{i[5]}}</td>
+                                <td>
+                                    <a href="{{ url_for('req_acccept', data=i[0]) }}" style="text-decoration: none;">
+                                    <button class="small-box" style="width: 43%;height: 19%; margin-top:9%; margin-left:5%;border:3px solid black" onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                                        <p style="margin-top: -3%; font-size: 10px; color:green;letter-spacing:0em"> ACCEPT</p>
+                                    </button></a>
+                                    <a href="{{ url_for('req_reject', data=i[0]) }}" style="text-decoration: none;">
+                                    <button class="small-box" style="width: 43%;height: 19%; margin-top:9%; margin-left:5%;border:3px solid black" onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                                        <p style="margin-top: -3%; font-size: 10px; color:red;letter-spacing:0em"> REJECT</p>
+                                    </button></a>
+                                </td>
+                                
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                      
+    
+                    </table>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

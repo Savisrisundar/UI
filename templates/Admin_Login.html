@@ -1,0 +1,56 @@
+<!DOCTYPE  html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> VIT CHENNAI </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        
+        <div class="main">
+            <div class="left_admin">
+                <div class="cy_admin">
+                </div>
+                    <div class="TI">LIBRARY MANAGEMENT 
+                        SYSTEM</div>
+                </div>
+        
+            <div class="logo">
+                <img src="{{ url_for('static', filename='vit.png') }}">
+            </div>
+            <div class="box">
+                <div class="login-text">ADMIN LOGIN</div>
+            <form action="/admin_check" method="post">
+                <div class="cred">
+                    <p>USER NAME</p>
+                </div>
+                <div class="user-box">
+                    <input type="text" name = 'ID' placeholder="Enter your username">
+                </div>
+                <div class="cred">PASSWORD</div>
+                <div class="user-box">
+                    <input type="password" name = 'pass' placeholder="Enter your password">
+                    
+                </div>
+                <div>
+                    <a href="{{ url_for('admin_forget_pass') }}" class="forget-pass" >Forgot Password?</a>
+                </div>
+                <button class="small-box">
+                   <p> LOGIN</p>
+                </button>
+            </form>
+                <div>
+                    <a href="{{ url_for('index') }}" class="small" >STUDENT LOGIN</a>
+                </div>
+            </div>
+            
+            
+
+        </div>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> VIT CHENNAI </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="main">
+            <div class="p2_left">
+                
+                <a href="{{ url_for('request_admin') }}">
+                    <button class="p2_btns" style="border-radius: 80px 80px 80px 80px;background-color: #E8CACA4F;filter: brightness(80%);"onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        REQUESTS</button></a>
+                    <a href="{{ url_for('penalty_admin') }}">
+                    <button class="p2_btns" style="border-top: 0px;border-radius: 80px 80px 80px 80px;background-color: #E8CACA4F;filter: brightness(80%);"onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        PENALTIES</button></a>
+                    
+                    <a href="{{ url_for('student_data_check_admin') }}">
+                    <button class="p2_btns" style="border-top: 0px; border-radius: 80px 80px 80px 80px;background-color: #E8CACA4F;filter: brightness(80%);"onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        STUDENT DATA CHECK </button></a>
+                    
+                    <a href="{{ url_for('book_data_admin') }}">
+                    <button class="p2_btns" style="border-top: 0px;border-radius: 80px 80px 80px 80px;background-color: #E8CACA4F;filter: brightness(80%);"onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        BOOK DATA</button></a>
+
+                    <a href="{{ url_for('admin') }}">
+                    <button class="small-box" style="border-radius: 80px 80px 80px 80px;margin-top: 140%;width:45%;background-color: #E8CACA4F;cursor: pointer;" onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#E8CACA4F'">
+                        <p style="margin-top: 3%"> LOGOUT</p>
+                    </button></a>
+                
+                
+            </div>
+            <div class="p2_logo">
+                <img src="{{ url_for('static', filename='vit.png') }}">
+            </div>
+            <div class="rectangle">
+                <p>BOOK DATA</p>
+                <form action="/bood_data_show" method="post">
+                <div class="small-rect" style="height:80%;margin-top: 0%;;border-radius: 50px 50px 50px 50px; background-color:#010B654F;margin-left:10%"> 
+                   
+                    <p style="font-size: 18px;color:black;margin-top:17%; margin-right:42%;white-space: nowrap;">BOOK NAME</p>
+                    <div class="user-box" style="width: 40%; margin-left:40%; margin-top:-5%; border-radius:15px;border:0px solid black">
+                        <input type="text" name = 'book' style="border-radius: 6px;" placeholder="Enter your Book Name" required>
+                    </div>
+                    <p style="font-size: 18px;color:black;margin-top:3%; margin-right:45%">AUTHOR NAME</p>
+                    <div class="user-box" style="width: 40%;height:10% ;margin-left:40%; margin-top:-4%; border-radius:15px;border:0px solid black">
+                        <input type="text" name = 'author' style="border-radius: 6px;height: 30px;" placeholder="Enter author name">
+                    </div>
+          
+                    <a href="/bood_data_show">
+                    <button class="small-box" style="border-radius: 6px; border: 3px solid black; width: 15%;height: 13%; margin-top:3%;  margin-left:44%;" onmouseover="this.style.backgroundColor='white'" onmouseout="this.style.backgroundColor='#010B654F'">
+                        <p style="margin-top: 0%; font-size: 13px; color:black; font-family: Arial, Helvetica, sans-serif;" > CHECK STATUS</p>
+                    </button></a>
+                    <br><br><br><br><br>
+                    
+                </div>
+            </form>
+              
+            </div>
+            
+        </div>
+    </body>
+</html>

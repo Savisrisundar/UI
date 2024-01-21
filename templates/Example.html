@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Transfer Example</title>
+</head>
+<body>
+
+    
+    {%if data_from_python==1%}
+
+    <h1>Data Transfer Example</h1>
+
+    {%else%}
+    <h1>Data Transfer Example - 2</h1>
+
+    {%endif%}
+
+    <!-- Access the data passed from Flask in JavaScript -->
+    <script>
+        // Retrieve the data passed from Flask and convert it to a JavaScript object
+        var dataFromPython = "{{ 'data_from_python'}}";
+
+        // Access the data in JavaScript
+        console.log("Data received from Python:", dataFromPython);
+
+        // You can now use the 'dataFromPython' object in your JavaScript code
+    </script>
+
+</body>
+</html>
